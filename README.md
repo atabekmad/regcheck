@@ -1,7 +1,6 @@
 # regcheck
 
 What is needed to run the tests:
-
 - python 2
 - robotframework (install via pip)
 - add environmental variable "REGC_PATH=<the project directory path>"  (optional)
