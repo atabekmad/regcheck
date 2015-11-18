@@ -8,12 +8,10 @@ What is needed to run the tests:
 
 
 In order to run enter:
-
 $ ./run_tests
 
 
 In order to clean up directories enter:
-
 $ ./clear
 
 
