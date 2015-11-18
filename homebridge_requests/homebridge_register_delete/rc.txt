@@ -1,0 +1,14 @@
+*** Settings ***
+
+Resource          ../rc.txt
+Variables         vars/data.py
+
+
+*** Variables ***
+
+${TIMES}    4
+
+
+*** Keywords ***
+
+

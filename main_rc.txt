@@ -1,0 +1,30 @@
+*** Settings ***
+
+Documentation   The main resourc.txte file for all test suites. File located in root dir of a project (lvl 1)
+... 
+...             Every child dir (lvl 2 deep) has a resourc.txte file pointing to this main resourc.txte file.
+...	        Those child dirs also have dirs. These dirs (lvl 3 deep) contain actual test data.  
+...             Resource files in lvl-3 dirs point to resourc.txte files in parent dirs (lvl 2)	
+
+
+Library         connector.py  ${HOST}  ${PORT}	
+Library         helper.py
+Variables       globalvars.py
+
+
+*** Variables ***
+	
+${HOST}              ec2-54-158-103-223.compute-1.amazonaws.com
+${PORT}              8577	
+
+
+
+*** Keywords ***
+
+Send Single Request 
+
+	[Arguments]     ${REQUEST_TEMPLATE}   ${PARAMS_LIST}
+	${REQUEST} =  	Single Request  ${REQUEST_TEMPLATE}   ${PARAMS_LIST}
+	Send Request    ${REQUEST}  
+	
+

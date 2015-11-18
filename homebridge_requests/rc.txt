@@ -1,0 +1,8 @@
+*** Settings ***
+Documentation   This is a resourc.txte file homebridge_requests directory
+...             Its job is to link all child test suites to the main resourc.txte file	
+
+Resource        ../main_rc.txt
+
+*** Variables ***
+

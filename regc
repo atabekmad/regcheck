@@ -1,0 +1,112 @@
+#! /usr/bin/env python2
+
+import platform
+import os
+import sys
+
+
+if platform.system() == 'Windows':
+    slash = "\\"
+else:
+    slash = "/"
+
+
+argv   = sys.argv
+length = len(sys.argv)
+cwd    = os.getcwd()
+rc     = '%{REGC_PATH}' + slash + 'main_rc.txt'
+
+
+
+usage ="""
+NAME
+  regc - utility script for creating new test cases and test suites
+USAGE
+  regc case CASENAME
+  regc suite SUITENAME [CASENAME]
+"""
+
+  
+
+default_case = """*** Settings ***
+
+Resource       {}
+Variables      {}
+
+
+*** Test Cases ***
+
+TEST
+
+        # write your test case here"""
+
+
+
+default_var = """import globalvars as gv
+import helper"""
+
+
+
+default_rc = """*** Settings ***
+Library        {}    
+
+
+***  Keywords ***"""
+
+
+
+def create_file(filename,text):
+    f = open(filename,'w')
+    f.write(text)
+    f.close()
+
+
+def create_cases(cases, insuite = False):
+    for case in cases:
+        ss = ''
+        varfile = case
+        if insuite:
+            ss = 'vars' + slash
+            varfile = case[case.find('/')+1:]
+        create_file(case+'.txt', default_case.format(rc, ss + varfile+'.py'))
+
+
+def create_vars(varfiles):
+    for varfile in varfiles:
+        create_file(varfile+'.py' , default_var)
+ 
+
+def create_suite(dirname,cases = None):
+    if os.path.exists(dirname):
+        sys.exit('Directory already exists')
+    dirname = dirname + slash
+    os.makedirs(dirname)
+    os.makedirs(dirname  + 'vars')
+    create_file(dirname  + 'rc.txt', default_rc.format(rc))
+    if cases: 
+        casefiles = map(lambda filename: dirname + filename, cases)
+        varfiles  = map(lambda filename: dirname + 'vars' + slash + filename, cases)
+        create_cases(casefiles, True)
+        print casefiles
+        create_vars(varfiles)
+        
+
+
+def main():
+
+    if length <= 2:
+        sys.exit(usage)
+
+    if length > 1:
+        if argv[1] == 'case':
+            create_cases(argv[2:])
+            create_vars(argv[2:])
+        elif argv[1] == 'suite':
+            if length > 3:
+                create_suite(argv[2], argv[3:])
+            else:
+                create_suite(argv[2])
+            
+
+    
+main()

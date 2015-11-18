@@ -1,0 +1,16 @@
+*** Settings ***
+
+
+Resource      rc.txt
+Variables     vars/cleanup.py
+
+
+*** Test cases ***
+
+TEST
+
+	:FOR     ${REQUEST}  IN  @{REQUESTS_LIST}
+        \	 Send Request         ${REQUEST}
+
+
+

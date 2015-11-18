@@ -1,0 +1,16 @@
+*** Settings ***
+
+Documentation   Checks a login with PRO account which isn't valid. 
+...	        Reponse should be an error message
+
+Resource        rc.txt
+Variables       vars/invalid_username_pro.py
+
+
+
+**** Test cases ***
+
+TEST
+
+	Send Request        ${REQUEST}
+	Response Should Be  ${FAILED}

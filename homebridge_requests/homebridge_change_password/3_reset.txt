@@ -1,0 +1,14 @@
+*** Settings ***
+
+Documentation    This test sets password back to its default value if some of the valid tests fail
+
+Resource         rc.txt
+Variables        vars/reset_if_failed.py
+
+
+*** Test cases ***
+
+TEST
+	Send Request          ${REQUEST}
+	Response Should be    ${OK}
+	Check Password Change	

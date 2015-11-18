@@ -1,0 +1,4 @@
+*** Settings ***
+
+Resource    ../rc.txt
+Variables   vars/data.py

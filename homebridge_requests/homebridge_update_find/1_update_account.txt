@@ -1,0 +1,15 @@
+*** Settings ***
+
+
+Resource      rc.txt
+Variables     vars/update_account.py
+
+
+*** Test cases ***
+
+TEST
+
+	:FOR     ${REQUEST}  IN  @{REQUESTS_LIST}
+        \	 Send Request         ${REQUEST}
+        \        Response Should Be   ${OK}
+

@@ -1,0 +1,17 @@
+#! /bin/bash
+
+
+find . -name "*.pyc" -type f -delete
+find . -name "*~" -type f -delete
+find . -name "*.html" -type f -delete
+find . -name "*.xml" -type f -delete
+find . -name "\#*" -type f -delete
+find . -name "curr_password" -type f -delete
+find . -name "nohup.out" -type f -delete
+find . -name "__pycache__" -type f -exec rm -r {} +
+find . -type f -name '__pycache__' -exec rm {} \;
+
+
+if [ -d "results" ]; then
+    rm -r results
+fi

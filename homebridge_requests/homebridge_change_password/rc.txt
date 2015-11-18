@@ -1,0 +1,24 @@
+*** Settings ***
+
+Documentation     All valid test (which change password) have Check Passsword Change test, to ensure that password change was successfull
+...               Also both valid test (1 and 2) save the password into a file name curr_password only if the change was successfull	
+
+Resource          ../rc.txt
+Library           helper.py
+Variables         vars/data.py
+
+
+
+*** Variables ***
+
+
+
+
+
+*** Keyword ***
+
+Check Password Change 
+	${PARAMS} =  Create List  ${USERNAME}  ${NEWPASSWORD}  unknown
+	Send Single Request      ${HB["LOGIN"]}   ${PARAMS}
+	Response Should be  ${OK}	
+	Set Suite Variable  ${CURRENT_PASSWORD}  ${NEWPASSWORD}

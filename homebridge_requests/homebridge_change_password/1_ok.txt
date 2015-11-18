@@ -1,0 +1,23 @@
+*** Settings ***
+
+Documentation    Valid test for changing password to random generated one
+...              If test succeeds then it saves the new password to a file
+
+Resource         rc.txt
+Variables        vars/ok.py
+Library          vars/mylib.py
+
+
+
+*** Test cases ***
+
+TEST
+	Send Request         ${REQUEST}                  	
+	${RESPONSE} =    Response Should Be   ${OK}
+	If Equal Then Save   ${RESPONSE}  ${OK}  ${NEWPASSWORD}    # If password changed successfully then save it to the file
+	Check Password Change
+
+
+
+
+	

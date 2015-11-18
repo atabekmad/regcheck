@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+if [ -d "results" ]; then
+   ./clear
+fi
+
+mkdir results
+time pybot -d results .

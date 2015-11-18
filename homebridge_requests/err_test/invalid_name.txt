@@ -1,0 +1,33 @@
+*** Settings ***
+
+Resource      rc.txt
+Variables     vars/invalid_name.py
+
+
+
+
+*** Test cases ***
+
+
+TEST
+
+	:FOR     ${REQUEST}  IN  @{REQUESTS_LIST}
+	\	 Send Request         ${REQUEST}
+        \        Response Should Be   ${FAILED}
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	

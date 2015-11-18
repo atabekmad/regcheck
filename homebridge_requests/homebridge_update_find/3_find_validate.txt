@@ -1,0 +1,18 @@
+*** Settings ***
+
+
+Resource      rc.txt
+Variables     vars/find.py
+Library       vars/validate.py
+
+
+*** Test cases ***
+
+TEST
+
+	:FOR     ${REQUEST}  IN  @{REQUESTS_LIST} 
+	\        Send Request             ${REQUEST}
+        \        ${RESPONSE} =   Response Should Be   ${OK}
+	\        Validate Response        ${RESPONSE}
+
+

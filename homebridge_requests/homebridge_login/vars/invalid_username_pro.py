@@ -1,0 +1,4 @@
+
+
+REQUEST = "HOMEBRIDGE_LOGIN:NAME=atabekpro, PASSWORD=W6ph5Mm5Pz8GgiULbPgzG37mj9g_"
+
