@@ -7,11 +7,11 @@ What is needed to run the tests:
 - add environmental variable "REGC_PATH=<the project directory path>"  (optional)
 
 
-In order to run enter:
+In order to run enter:  
 $ ./run_tests
 
 
-In order to clean up directories enter:
+In order to clean up directories enter:  
 $ ./clear
 
 
