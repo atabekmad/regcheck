@@ -10,13 +10,12 @@ What is needed to run the tests:
 In order to run enter:  
 $ ./run_tests
 
-
 In order to clean up directories enter:  
 $ ./clear
 
+If you want to create new test suite or test case use this command:  
+$ ./regc
 
-If you want to create new test suite or test case use this command - regc.
-Just enter "./regc" in project's root directory and you'll get instructions of using it.
 
 
 
