@@ -3,21 +3,6 @@ EMAIL    = 'atabek@shazzle.com'
 VERSION  = 2
 
 
-
-# PARAMS = {
-#     "NAME"        :   {
-#         "VALID"      : [['regtest','regtest1','regtest2','regtest3','regtest4','regtest5','regtest6','regtest7','regtest8','regtest9']
-#                      ['atabekdesktop','atabek','ahb','ahbdot','ahbdot1']],
-#         "INVALID"    : [[' ', '%$#@^($', 'sad|xz||',]]
-#         },
-#     "PASSWORD"    :   {
-#         "VALID"
-
-
-# PARAMS.get(name,valid,
-
-    
-
 VALID_USERNAME_LIST      = ['regtest','regtest1','regtest2','regtest3','regtest4','regtest5','regtest6','regtest7','regtest8','regtest9']
 DEVICE_TYPE_LIST         = ['ios','android']
 FIRSTNAME_LIST           = ['Atabek', 'Ruslan', 'Vadim', 'Yura', 'Navruz', 'Murod', 'Aleksey', 'Kseniya', 'Susha', 'Evgeniy', 'Jawid', 'Petro', 'Vladimir']
@@ -43,22 +28,3 @@ HB = {
 OK                 = "OK"
 FAILED             = "FAILED"
 FAILED_NOT_EXISTS  = "FAILED_NOT_EXISTS"
-
-
-
-
-# PARAMS = {
-#     "NAME" : {
-#         'VALID'    : ['regtest', 'regtest1', 'regtest2', 'regtest3', 'regtest4', 'regtest5', 'regtest6', 'regtest7', 'regtest8', 'regtest9'],
-#         'INVALID'  : NOTCREATED_USERLIST,
-#     },
-#     "PASSWORD"     : 'W6ph5Mm5Pz8GgiULbPgzG37mj9g_',
-#     "DEVICE_TYPE"  : ['ios','android'],
-#     'FIRST_NAME'   : FIRSTNAME_LIST,
-#     'LAST_NAME'    : LASTNAME_LIST,
-#     'EMAIL'        : EMAIL,
-#     'DATA'
-
-
-# PARAMS["NAME"]["VALID"][0]
-

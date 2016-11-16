@@ -171,21 +171,3 @@ def generate_invalid_reqs(request_dict, params_dict, number):
         res.extend(generate_requests(req,params_list,number))
     return res
 
-
-# def complete(params=None):
-
-
-
-def test(request_template, times=1, *params):
-    
-#    params = complete(params)
-    params = [params]
-    requests = generate_requests(request_template,params, times)
-
-    for request in requests:
-        conn = connector('shazzledata.com','443')
-        conn.send_request(request)
-        conn.response_should_be(response)
-
-    print "FINISH"
-    
